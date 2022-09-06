@@ -149,7 +149,8 @@ public class ScheduleApp implements ActionListener {
 
     public static void DownloadLists() {
         Settings.ClearAll();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("file.txt"), StandardCharsets.UTF_8))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                new FileInputStream("file.txt"), StandardCharsets.UTF_8))) {
             String line;
             String[] args;
             int IndexList = 0, i, n;
@@ -184,7 +185,8 @@ public class ScheduleApp implements ActionListener {
 
     public static void RemoveEmptyItem(DefaultListModel<String> ListModel) {
         for (int i = 0; i < ListModel.size(); i++)
-            if (Objects.equals(ListModel.getElementAt(0), "")) ListModel.remove(0);
+            if (Objects.equals(ListModel.getElementAt(0), ""))
+                ListModel.remove(0);
     }
 
     @Override
