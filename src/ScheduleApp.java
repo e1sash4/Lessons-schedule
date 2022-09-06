@@ -18,12 +18,12 @@ public class ScheduleApp implements ActionListener {
 
     JMenuBar menu;
     JMenu FileMenu, AboutProgramMenu;
-    JMenuItem SettingsItem,ExitItem,
-            AboutAuthorItem,AboutProgramItem,CertificateItem;
+    JMenuItem SettingsItem, ExitItem,
+            AboutAuthorItem, AboutProgramItem, CertificateItem;
 
     JLabel BackgroundLabel,
-            MondayLabel,TuesdayLabel,WednesdayLabel,
-            ThursdayLabel,FridayLabel,SaturdayLabel;
+            MondayLabel, TuesdayLabel, WednesdayLabel,
+            ThursdayLabel, FridayLabel, SaturdayLabel;
 
     public ScheduleApp() {
         ScheduleAppFrame.setTitle("Розклад занять");
@@ -81,12 +81,12 @@ public class ScheduleApp implements ActionListener {
         FridayLabel = new JLabel("П'ятниця");
         SaturdayLabel = new JLabel("Субота");
 
-        MondayLabel.setBounds(78,18,100,35);
-        TuesdayLabel.setBounds(236,18,100,35);
-        WednesdayLabel.setBounds(389,18,100,35);
-        ThursdayLabel.setBounds(87,195,100,35);
-        FridayLabel.setBounds(236,195,100,35);
-        SaturdayLabel.setBounds(389,195,100,35);
+        MondayLabel.setBounds(78, 18, 100, 35);
+        TuesdayLabel.setBounds(236, 18, 100, 35);
+        WednesdayLabel.setBounds(389, 18, 100, 35);
+        ThursdayLabel.setBounds(87, 195, 100, 35);
+        FridayLabel.setBounds(236, 195, 100, 35);
+        SaturdayLabel.setBounds(389, 195, 100, 35);
 
         contents.add(MondayLabel);
         contents.add(TuesdayLabel);
@@ -119,14 +119,14 @@ public class ScheduleApp implements ActionListener {
         JScrollPane FridayJScrollPane = new JScrollPane(list5);
         JScrollPane SaturdayJScrollPane = new JScrollPane(list6);
 
-        MondayJScrollPane.setBounds(50,50,125,150);
-        TuesdayJScrollPane.setBounds(200,50,125,150);
-        WednesdayJScrollPane.setBounds(350,50,125,150);
-        ThursdayJScrollPane.setBounds(50,225,125,150);
-        FridayJScrollPane.setBounds(200,225,125,150);
-        SaturdayJScrollPane.setBounds(350,225,125,150);
+        MondayJScrollPane.setBounds(50, 50, 125, 150);
+        TuesdayJScrollPane.setBounds(200, 50, 125, 150);
+        WednesdayJScrollPane.setBounds(350, 50, 125, 150);
+        ThursdayJScrollPane.setBounds(50, 225, 125, 150);
+        FridayJScrollPane.setBounds(200, 225, 125, 150);
+        SaturdayJScrollPane.setBounds(350, 225, 125, 150);
 
-        settings.setBounds(50,400,125,35);
+        settings.setBounds(50, 400, 125, 35);
 
         contents.setLayout(null);
 
@@ -146,17 +146,18 @@ public class ScheduleApp implements ActionListener {
         ScheduleAppFrame.setSize(525, 520);
         ScheduleAppFrame.setVisible(true);
     }
-    public static void DownloadLists(){
+
+    public static void DownloadLists() {
         Settings.ClearAll();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("file.txt"), StandardCharsets.UTF_8))){
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("file.txt"), StandardCharsets.UTF_8))) {
             String line;
             String[] args;
             int IndexList = 0, i, n;
-            while((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 args = line.split("ᅠ");
                 i = args.length;
                 n = 0;
-                while (i!=0){
+                while (i != 0) {
                     switch (IndexList) {
                         case 0 -> dlm1.addElement(args[n]);
                         case 1 -> dlm2.addElement(args[n]);
@@ -170,7 +171,7 @@ public class ScheduleApp implements ActionListener {
                 }
                 IndexList++;
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error " + e);
         }
         RemoveEmptyItem(dlm1);
@@ -180,17 +181,18 @@ public class ScheduleApp implements ActionListener {
         RemoveEmptyItem(dlm5);
         RemoveEmptyItem(dlm6);
     }
-    public static void RemoveEmptyItem(DefaultListModel<String> ListModel){
-        for(int i = 0; i < ListModel.size();i++)
-            if(Objects.equals(ListModel.getElementAt(0), "")) ListModel.remove(0);
+
+    public static void RemoveEmptyItem(DefaultListModel<String> ListModel) {
+        for (int i = 0; i < ListModel.size(); i++)
+            if (Objects.equals(ListModel.getElementAt(0), "")) ListModel.remove(0);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==SettingsItem) new Settings();
-        if(e.getSource()==ExitItem) System.exit(0);
-        if(e.getSource()==CertificateItem) new CertificateWindow();
-        if(e.getSource()==AboutAuthorItem) new AboutAuthorWindow();
-        if(e.getSource()==AboutProgramItem) new AboutProgramWindow();
+        if (e.getSource() == SettingsItem) new Settings();
+        if (e.getSource() == ExitItem) System.exit(0);
+        if (e.getSource() == CertificateItem) new CertificateWindow();
+        if (e.getSource() == AboutAuthorItem) new AboutAuthorWindow();
+        if (e.getSource() == AboutProgramItem) new AboutProgramWindow();
     }
 }
