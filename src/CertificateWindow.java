@@ -1,10 +1,10 @@
 import javax.swing.*;
 
-public class CertificateWindow extends JFrame{
+public class CertificateWindow extends JFrame {
 
-    CertificateWindow(){
+    CertificateWindow() {
         setIconImage(new ImageIcon("image/pngwing.png").getImage());
-        setTitle("Довідка");
+        setTitle("Certificate");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

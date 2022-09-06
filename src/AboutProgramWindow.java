@@ -1,10 +1,10 @@
 import javax.swing.*;
 
-public class AboutProgramWindow extends JFrame{
+public class AboutProgramWindow extends JFrame {
 
-    AboutProgramWindow(){
+    AboutProgramWindow() {
         setIconImage(new ImageIcon("image/pngwing.png").getImage());
-        setTitle("Про програму");
+        setTitle("About the program");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

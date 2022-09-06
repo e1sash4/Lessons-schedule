@@ -26,20 +26,20 @@ public class ScheduleApp implements ActionListener {
             ThursdayLabel, FridayLabel, SaturdayLabel;
 
     public ScheduleApp() {
-        ScheduleAppFrame.setTitle("Розклад занять");
+        ScheduleAppFrame.setTitle("Lessons schedule");
         ScheduleAppFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         ScheduleAppFrame.setIconImage(new ImageIcon("image/pngwing.png").getImage());
         menu = new JMenuBar();
-        FileMenu = new JMenu("Файл");
-        AboutProgramMenu = new JMenu("Про програму");
+        FileMenu = new JMenu("File");
+        AboutProgramMenu = new JMenu("About the program");
 
-        SettingsItem = new JMenuItem("Налаштування");
-        ExitItem = new JMenuItem("Вихід");
+        SettingsItem = new JMenuItem("Settings");
+        ExitItem = new JMenuItem("Exit");
 
-        CertificateItem = new JMenuItem("Довідка");
-        AboutAuthorItem = new JMenuItem("Про автора");
-        AboutProgramItem = new JMenuItem("Про програму");
+        CertificateItem = new JMenuItem("Certificate");
+        AboutAuthorItem = new JMenuItem("About the author");
+        AboutProgramItem = new JMenuItem("About the program");
 
         SettingsItem.addActionListener(this);
         ExitItem.addActionListener(this);
@@ -74,12 +74,12 @@ public class ScheduleApp implements ActionListener {
 
         JPanel contents = new JPanel();
 
-        MondayLabel = new JLabel("Понеділок");
-        TuesdayLabel = new JLabel("Вівторок");
-        WednesdayLabel = new JLabel("Середа");
-        ThursdayLabel = new JLabel("Четвер");
-        FridayLabel = new JLabel("П'ятниця");
-        SaturdayLabel = new JLabel("Субота");
+        MondayLabel = new JLabel("Monday");
+        TuesdayLabel = new JLabel("Tuesday");
+        WednesdayLabel = new JLabel("Wednesday");
+        ThursdayLabel = new JLabel("Thursday");
+        FridayLabel = new JLabel("Friday");
+        SaturdayLabel = new JLabel("Saturday");
 
         MondayLabel.setBounds(78, 18, 100, 35);
         TuesdayLabel.setBounds(236, 18, 100, 35);
@@ -99,7 +99,7 @@ public class ScheduleApp implements ActionListener {
         BackgroundLabel.setIcon(new ImageIcon("image/bg.jpg"));
         BackgroundLabel.setBounds(0, 0, 525, 520);
 
-        JButton settings = new JButton("Налаштування");
+        JButton settings = new JButton("Settings");
         settings.addActionListener(e -> new Settings());
         settings.setFocusable(false);
 

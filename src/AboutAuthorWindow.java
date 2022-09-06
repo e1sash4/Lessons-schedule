@@ -1,10 +1,10 @@
 import javax.swing.*;
 
-public class AboutAuthorWindow extends JFrame{
+public class AboutAuthorWindow extends JFrame {
 
-    AboutAuthorWindow(){
+    AboutAuthorWindow() {
         setIconImage(new ImageIcon("image/pngwing.png").getImage());
-        setTitle("Про автора");
+        setTitle("About the author");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
