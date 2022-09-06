@@ -3,6 +3,7 @@ import javax.swing.*;
 public class AboutProgramWindow extends JFrame {
 
     AboutProgramWindow() {
+
         setIconImage(new ImageIcon("image/pngwing.png").getImage());
         setTitle("About the program");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
